@@ -7,7 +7,7 @@ stages:
 
 include:
   - project: 'iiidevops-templates/ci-template'
-    ref: 'v2.1.1'
+    ref: 'v2.1.5'
     file: 'ci/template.gitlab-ci.yml'
 
 Test--SonarQube source code scan:
@@ -32,6 +32,7 @@ Build image:
 Build--Scan docker image:
   variables:
     iiidevops: deployed-environments
+    DOCKERFILE_PATH: Dockerfile
   only:
     - skip
 
